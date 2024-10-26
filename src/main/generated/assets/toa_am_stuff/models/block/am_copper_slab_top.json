@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "toa_am_stuff:block/am_copper_block",
+    "side": "toa_am_stuff:block/am_copper_block",
+    "top": "toa_am_stuff:block/am_copper_block"
+  }
+}

@@ -1,0 +1,6 @@
+// 1.21.1	2024-10-25T16:53:36.505045	Toa Amethyst Stuff/Tags for minecraft:block
+857fddb668b61ac8a1256b222bc76c0ce097c9b7 data\minecraft\tags\block\walls.json
+33693380dcf9d566a6670ce223f75c5ee2c4443f data\minecraft\tags\block\stairs.json
+00730b6c9539a738570a9fe740d17c72378024ea data\minecraft\tags\block\slabs.json
+463800b474bbb3c300cd0c393f956a6d89a3e941 data\minecraft\tags\block\mineable\pickaxe.json
+ff19ad886ddae484f6065409be3b3dbfe516e329 data\minecraft\tags\block\needs_stone_tool.json

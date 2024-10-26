@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "toa_am_stuff:block/am_copper_block"
+  }
+}

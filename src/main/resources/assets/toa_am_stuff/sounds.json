@@ -1,0 +1,26 @@
+{
+  "am_copper_block_break": {
+    "subtitle": "sounds.toa_am_stuff.am_copper_block_break",
+    "sounds": [
+      "toa_am_stuff:am_copper_block_break"
+    ]
+  },
+  "am_copper_block_step": {
+    "subtitle": "sounds.toa_am_stuff.am_copper_block_step",
+    "sounds": [
+      "toa_am_stuff:am_copper_block_step"
+    ]
+  },
+  "am_copper_block_place": {
+    "subtitle": "toa_am_stuff.am_copper_block_place",
+    "sounds": [
+      "toa_am_stuff:am_copper_block_place"
+    ]
+  },
+  "am_copper_block_fall": {
+    "subtitle": "toa_am_stuff.am_copper_block_fall",
+    "sounds": [
+      "toa_am_stuff:am_copper_block_fall"
+    ]
+  }
+}

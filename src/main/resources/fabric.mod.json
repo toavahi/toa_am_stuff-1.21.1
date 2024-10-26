@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "toa_am_stuff",
+	"version": "${version}",
+	"name": "Toa Amethyst Stuff",
+	"description": "This mod adds a little bit of random stuff related to amethyst",
+	"authors": [
+		"toavahi"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/toa_am_stuff/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.toavahi.toa_am_stuff.ToaAmethystStuff"
+		],
+		"client": [
+			"net.toavahi.toa_am_stuff.ToaAmethystStuffClient"
+		],
+		"fabric-datagen": [
+			"net.toavahi.toa_am_stuff.ToaAmethystStuffDataGenerator"
+		]
+	},
+	"mixins": [
+		"toa_am_stuff.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

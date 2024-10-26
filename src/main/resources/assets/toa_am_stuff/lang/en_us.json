@@ -1,0 +1,22 @@
+{
+  "item.toa_am_stuff.am_shield": "Amethyst Shield",
+  "item.toa_am_stuff.am_brush": "Amethyst Brush",
+  "item.toa_am_stuff.am_dust": "Amethyst Dust",
+  "item.toa_am_stuff.am_chisel": "Amethyst Chisel",
+  "item.toa_am_stuff.am_grenade": "Amethyst Grenade",
+  "item.toa_am_stuff.am_triangle": "Amethyst Triangle",
+  "item.toa_am_stuff.am_copper_ingot": "AmethCopper Ingot",
+  "effect.toa_am_stuff.am_effect": "Amethyst Piercing",
+  "block.toa_am_stuff.am_copper_block": "AmethCopper Block",
+  "block.toa_am_stuff.am_copper_stairs": "AmethCopper Stairs",
+  "block.toa_am_stuff.am_copper_slab": "AmethCopper Slab",
+  "block.toa_am_stuff.am_copper_wall": "AmethCopper Wall",
+  "entity.toa_am_stuff.am_grenade": "Amethyst Grenade",
+  "entity.toa_am_stuff.am_golem_entity": "Amethyst Golem",
+  "item.minecraft.potion.effect.am_potion": "Potion Of Amethyst Piercing",
+  "item.minecraft.potion.effect.long_am_potion": "Potion Of Amethyst Piercing",
+  "item.minecraft.splash_potion.effect.am_potion": "Splash Potion Of Amethyst Piercing",
+  "item.minecraft.splash_potion.effect.long_am_potion": "Splash Potion Of Amethyst Piercing",
+  "item.minecraft.lingering_potion.effect.am_potion": "Lingering Potion Of Amethyst Piercing",
+  "item.minecraft.lingering_potion.effect.long_am_potion": "Lingering Potion Of Amethyst Piercing"
+}

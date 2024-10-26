@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "toa_am_stuff:block/am_copper_block"
+  }
+}

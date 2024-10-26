@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "net.toavahi.toa_am_stuff.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EatFoodMixin",
+    "ExampleMixin",
+    "LightningRodMixin",
+    "ModEntityDataSaverMixin",
+    "ShieldBrakeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "HeartHudMixin"
+  ]
+}

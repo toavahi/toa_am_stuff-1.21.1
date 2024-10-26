@@ -1,0 +1,6 @@
+{
+  "parent": "toa_am_stuff:item/am_brush",
+  "textures": {
+    "layer0": "toa_am_stuff:item/am_brush_orange"
+  }
+}

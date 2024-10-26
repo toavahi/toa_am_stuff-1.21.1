@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "toa_am_stuff:block/am_copper_slab"
+    },
+    "type=double": {
+      "model": "toa_am_stuff:block/am_copper_block"
+    },
+    "type=top": {
+      "model": "toa_am_stuff:block/am_copper_slab_top"
+    }
+  }
+}

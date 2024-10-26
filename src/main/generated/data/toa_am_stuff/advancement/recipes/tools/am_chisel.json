@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "find_in_the_world_not_crafting_table": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:barrier"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "toa_am_stuff:am_chisel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "find_in_the_world_not_crafting_table"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "toa_am_stuff:am_chisel"
+    ]
+  }
+}

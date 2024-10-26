@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "toa_am_stuff:block/am_copper_block"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "toa_am_stuff:item/am_brush"
+  },
+  "overrides": [
+    { "predicate": {"toa_am_stuff:color": 0.05 },
+      "model": "toa_am_stuff:item/am_brush_white" },
+    { "predicate":  {"toa_am_stuff:color": 0.0625 },
+      "model": "toa_am_stuff:item/am_brush_red" },
+    { "predicate":  {"toa_am_stuff:color": 0.125 },
+      "model": "toa_am_stuff:item/am_brush_black" },
+    { "predicate":  {"toa_am_stuff:color": 0.1875 },
+      "model": "toa_am_stuff:item/am_brush_orange" },
+    { "predicate":  {"toa_am_stuff:color": 0.25 },
+      "model": "toa_am_stuff:item/am_brush_green" },
+    { "predicate":  {"toa_am_stuff:color": 0.3125 },
+      "model": "toa_am_stuff:item/am_brush_blue" },
+    { "predicate":  {"toa_am_stuff:color": 0.375 },
+      "model": "toa_am_stuff:item/am_brush_light_blue" },
+    { "predicate":  {"toa_am_stuff:color": 0.4375 },
+      "model": "toa_am_stuff:item/am_brush_light_gray" },
+    { "predicate":  {"toa_am_stuff:color": 0.5 },
+      "model": "toa_am_stuff:item/am_brush_yellow" },
+    { "predicate":  {"toa_am_stuff:color": 0.5625 },
+      "model": "toa_am_stuff:item/am_brush_purple" },
+    { "predicate":  {"toa_am_stuff:color": 0.625 },
+      "model": "toa_am_stuff:item/am_brush_magenta" },
+    { "predicate":  {"toa_am_stuff:color": 0.6875 },
+      "model": "toa_am_stuff:item/am_brush_cyan" },
+    { "predicate":  {"toa_am_stuff:color": 0.75 },
+      "model": "toa_am_stuff:item/am_brush_lime" },
+    { "predicate":  {"toa_am_stuff:color": 0.8125 },
+      "model": "toa_am_stuff:item/am_brush_brown" },
+    { "predicate":  {"toa_am_stuff:color": 0.875 },
+      "model": "toa_am_stuff:item/am_brush_gray" },
+    { "predicate":  {"toa_am_stuff:color": 0.9375 },
+      "model": "toa_am_stuff:item/am_brush_pink" },
+    { "predicate":  {"toa_am_stuff:color": 1.0 },
+      "model": "toa_am_stuff:item/am_brush_wet" }
+  ]
+}
