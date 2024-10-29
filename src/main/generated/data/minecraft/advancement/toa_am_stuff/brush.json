@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:toa_am_stuff/root",
+  "criteria": {
+    "brush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "toa_am_stuff:am_brush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.toa_am_stuff.brush.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_brush"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.brush.title"
+    }
+  },
+  "requirements": [
+    [
+      "brush"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

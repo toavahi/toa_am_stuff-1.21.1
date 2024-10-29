@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "toa_am_stuff:am_lab",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 587106295,
+
+    "spacing": 34,
+
+    "separation": 8,
+
+    "type": "minecraft:random_spread"
+  }
+}

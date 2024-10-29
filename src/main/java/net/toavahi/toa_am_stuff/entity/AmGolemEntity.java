@@ -2,10 +2,10 @@ package net.toavahi.toa_am_stuff.entity;
 
 import net.minecraft.block.*;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.NoPenaltyTargeting;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
@@ -21,13 +21,16 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -37,8 +40,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import net.minecraft.world.event.GameEvent;
-import net.toavahi.toa_am_stuff.ToaAmethystStuff;
 import net.toavahi.toa_am_stuff.item.ModItems;
 import net.toavahi.toa_am_stuff.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
@@ -48,18 +49,13 @@ import java.util.List;
 import java.util.Random;
 
 public class AmGolemEntity extends TameableEntity {
-    private boolean fire_upgrade;
-    private boolean ice_upgrade;
     private int shield_totem;
     private int heal_totem;
+    private boolean bell_upgrade;
+    private boolean follow;
 
     public AmGolemEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
-    }
-
-    public AmGolemEntity(World world, PlayerEntity owner){
-        super(ModEntities.AM_GOLEM_ENTITY, world);
-        this.setOwner(owner);
     }
 
     public static DefaultAttributeContainer.Builder createAmGolemEntityAttributes() {
@@ -72,8 +68,8 @@ public class AmGolemEntity extends TameableEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new PressButtonGoal(this));
-        this.goalSelector.add(2, new FollowOwnerGoal(this, 1.0, 2.0F, 10.0F));
+        this.goalSelector.add(1, new PressButtonGoal(this, 1.0));
+        this.goalSelector.add(2, new FollowOwnerCustomGoal(this, 1.0, 2.0F, 10.0F));
         this.goalSelector.add(3, new WanderAroundGoal(this, 1.0));
     }
 
@@ -82,25 +78,33 @@ public class AmGolemEntity extends TameableEntity {
         World world = player.getWorld();
         if (!world.isClient()) {
             ItemStack stack = player.getStackInHand(hand);
-            if (stack.getItem() == Items.FIRE_CHARGE) {
-                stat(stack, player);
-                this.fire_upgrade = true;
-            } else if(stack.getItem() == Items.GOLD_NUGGET){
+            Item item = stack.getItem();
+            if(item == Items.GOLD_NUGGET){
                 this.heal_totem += 20 * 60;
                 stat(stack, player);
-            } else if(stack.getItem() == Items.IRON_NUGGET){
+            } else if(item == Items.IRON_NUGGET){
                 this.shield_totem += 20 * 60;
                 stat(stack, player);
-            } else if(stack.getItem() == Items.SNOWBALL){
-                stat(stack, player);
-                this.ice_upgrade = true;
-            } else if(stack.getItem() == ModItems.AM_COPPER_INGOT){
+            } else if(item == ModItems.AM_COPPER_INGOT){
                 this.heal(5F);
-            } else if(stack.getItem() == Items.COPPER_BLOCK){
+                world.sendEntityStatus(this, EntityStatuses.ADD_BREEDING_PARTICLES);
+            } else if(item == Items.COPPER_BLOCK){
                 this.eatFood(world, new ItemStack(Items.COPPER_BLOCK), new FoodComponent.Builder().nutrition(0).saturationModifier(0).build());
                 ItemEntity entity = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(Items.COPPER_INGOT, 10));
                 world.spawnEntity(entity);
                 this.damage(this.getDamageSources().dryOut(), 1);
+            } else if(item == Items.NOTE_BLOCK && !this.bell_upgrade){
+                stat(stack, player);
+                this.bell_upgrade = true;
+            } else if(item == ModItems.AM_CHISEL && this.bell_upgrade){
+                this.bell_upgrade = false;
+                ItemEntity entity = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(Items.NOTE_BLOCK));
+                world.spawnEntity(entity);
+                player.incrementStat(Stats.USED.getOrCreateStat(item));
+                stack.damage(1, player, LivingEntity.getSlotForHand(hand));
+            } else if(stack.isEmpty() && this.isOwner(player)){
+                this.follow = !this.follow;
+                world.playSound(null, this.getBlockPos(), SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON, SoundCategory.BLOCKS);
             }
         }
         return ActionResult.SUCCESS;
@@ -155,13 +159,14 @@ public class AmGolemEntity extends TameableEntity {
                     this.totem(world, false);
                 }
             }
-            if(world.getTime() % 100 == 0) {
+            if(this.bell_upgrade && world.getTime() % 100 == 0) {
                 List<HostileEntity> list = world.getEntitiesByClass(HostileEntity.class,
                         new Box(this.getX() + 20, this.getY() + 60, this.getZ() + 20,
                                 this.getX() - 20,this.getY() - 60, this.getZ() - 20),
                         this::canSee);
                 if(list != null && !list.isEmpty()){
                     produceParticles(ParticleTypes.ELECTRIC_SPARK);
+                    world.playSound(null, this.getBlockPos(), SoundEvents.BLOCK_NOTE_BLOCK_BASS.value(), SoundCategory.BLOCKS);
                 }
             }
         }
@@ -193,19 +198,17 @@ public class AmGolemEntity extends TameableEntity {
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.putBoolean("fire_upgrade", this.fire_upgrade);
-        nbt.putBoolean("ice_upgrade", this.ice_upgrade);
         nbt.putInt("shield_totem", this.shield_totem);
         nbt.putInt("heal_totem", this.heal_totem);
+        nbt.putBoolean("bell_upgrade", this.bell_upgrade);
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
-        this.fire_upgrade = nbt.getBoolean("fire_upgrade");
-        this.ice_upgrade = nbt.getBoolean("ice_upgrade");
         this.shield_totem = nbt.getInt("shield_totem");
         this.heal_totem = nbt.getInt("heal_totem");
+        this.bell_upgrade = nbt.getBoolean("bell_upgrade");
     }
 
     @Override
@@ -224,8 +227,8 @@ public class AmGolemEntity extends TameableEntity {
     }
 
     private static class PressButtonGoal extends WanderAroundGoal {
-        public PressButtonGoal(AmGolemEntity mob){
-            super(mob, 1.0);
+        public PressButtonGoal(AmGolemEntity mob, double speed){
+            super(mob, speed);
         }
 
         @Override
@@ -266,8 +269,21 @@ public class AmGolemEntity extends TameableEntity {
                 BlockState state = world.getBlockState(pos);
                 ((ButtonBlock) state.getBlock()).powerOn(state, world, pos, null);
             }
-            ToaAmethystStuff.LOGGER.info(String.valueOf(pos));
             super.stop();
+        }
+    }
+
+    private static class FollowOwnerCustomGoal extends FollowOwnerGoal{
+        private final AmGolemEntity mob;
+
+        public FollowOwnerCustomGoal(TameableEntity tameable, double speed, float minDistance, float maxDistance) {
+            super(tameable, speed, minDistance, maxDistance);
+            this.mob = (AmGolemEntity) tameable;
+        }
+
+        @Override
+        public boolean canStart() {
+            return this.mob.follow && super.canStart();
         }
     }
 }

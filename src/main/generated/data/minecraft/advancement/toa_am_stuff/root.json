@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:amethyst_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/block/amethyst_block.png",
+    "description": {
+      "translate": "advancement.toa_am_stuff.root.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_dust"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "shard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -10,7 +10,6 @@ import net.toavahi.toa_am_stuff.ToaAmethystStuff;
 import net.toavahi.toa_am_stuff.sound.ModSounds;
 
 public class ModBlocks {
-    public static final Block BEACON_MIRROR = registerBlock("be_mirror", new BeaconMirror(AbstractBlock.Settings.copy(Blocks.GLASS)));
     public static final Block AM_COPPER_BLOCK = registerBlock("am_copper_block", new Block(AbstractBlock.Settings.copy(Blocks.COPPER_BLOCK).sounds(ModSounds.AM_COPPER_BLOCK_SOUNDS)));
     public static final Block AM_COPPER_STAIRS = registerBlock("am_copper_stairs",
             new StairsBlock(AM_COPPER_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(AM_COPPER_BLOCK)));

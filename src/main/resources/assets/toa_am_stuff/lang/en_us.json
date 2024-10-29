@@ -18,5 +18,17 @@
   "item.minecraft.splash_potion.effect.am_potion": "Splash Potion Of Amethyst Piercing",
   "item.minecraft.splash_potion.effect.long_am_potion": "Splash Potion Of Amethyst Piercing",
   "item.minecraft.lingering_potion.effect.am_potion": "Lingering Potion Of Amethyst Piercing",
-  "item.minecraft.lingering_potion.effect.long_am_potion": "Lingering Potion Of Amethyst Piercing"
+  "item.minecraft.lingering_potion.effect.long_am_potion": "Lingering Potion Of Amethyst Piercing",
+  "advancement.toa_am_stuff.ingot.title": "New technology",
+  "advancement.toa_am_stuff.ingot.desc": "Imagine golems",
+  "advancement.toa_am_stuff.brush.desc": "Tom Sawyer had a plan",
+  "advancement.toa_am_stuff.brush.title": "Paint'em all",
+  "advancement.toa_am_stuff.grenade.title": "Modern Warfare",
+  "advancement.toa_am_stuff.grenade.desc": "Feel impaled yet?",
+  "advancement.toa_am_stuff.dust.title": "It grows",
+  "advancement.toa_am_stuff.dust.desc": "Don't mix this with food",
+  "advancement.toa_am_stuff.chisel.title": "More like a path maker",
+  "advancement.toa_am_stuff.chisel.desc": "It's 20w14inf",
+  "advancement.toa_am_stuff.root.title": "Amethyst update",
+  "advancement.toa_am_stuff.root.desc": "Wait, isn't it a drop?"
 }

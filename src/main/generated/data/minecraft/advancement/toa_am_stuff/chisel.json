@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:toa_am_stuff/root",
+  "criteria": {
+    "chisel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "toa_am_stuff:am_chisel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.toa_am_stuff.chisel.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_chisel"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.chisel.title"
+    }
+  },
+  "requirements": [
+    [
+      "chisel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

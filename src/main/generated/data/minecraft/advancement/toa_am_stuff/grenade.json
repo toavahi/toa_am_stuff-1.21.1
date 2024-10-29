@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:toa_am_stuff/dust",
+  "criteria": {
+    "grenade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "toa_am_stuff:am_grenade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.toa_am_stuff.grenade.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_grenade"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.grenade.title"
+    }
+  },
+  "requirements": [
+    [
+      "grenade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,11 +1,11 @@
-// 1.21.1	2024-10-25T16:53:36.4870935	Toa Amethyst Stuff/Recipes
+// 1.21.1	2024-10-29T12:35:44.5182717	Toa Amethyst Stuff/Recipes
 c964980e0c56b16ebc04f6d58d2537db5d1ee50e data\toa_am_stuff\recipe\am_brush.json
 a60a70385370fd9952cb3fe07c8fa3008d0b47d9 data\toa_am_stuff\recipe\am_shield.json
 e49a4d8b16b89a6102554083a9b108797d5ef9fa data\toa_am_stuff\advancement\recipes\tools\am_brush.json
 748d07cf6f7a923265a2476340b5cfc30ef0c5dd data\toa_am_stuff\recipe\am_copper_stairs_from_am_copper_block_stonecutting.json
 2d656119204cb63f4b500fd396b7d40330350bcb data\toa_am_stuff\advancement\recipes\building_blocks\am_copper_stairs.json
 196e152d9fbd0ead07436bb86c17cad0ffdd79bd data\toa_am_stuff\advancement\recipes\building_blocks\am_copper_block.json
-5d0e32864094ff7b70c07b4b601505b39c75f110 data\toa_am_stuff\recipe\am_copper_ingot.json
+c1859faef99e95c1bb822a4e60d7ad0863195ce7 data\toa_am_stuff\recipe\am_copper_ingot.json
 495a4dafa93e1ef845dc3422eef3a4960b8fc286 data\toa_am_stuff\advancement\recipes\tools\am_triangle.json
 eac4a10089844353514b2bbcfbbaa375d537e3ac data\toa_am_stuff\recipe\am_grenade.json
 e7043af3dd141cd87001b699c3ef98f45dbd4668 data\toa_am_stuff\recipe\am_copper_wall_from_am_copper_block_stonecutting.json

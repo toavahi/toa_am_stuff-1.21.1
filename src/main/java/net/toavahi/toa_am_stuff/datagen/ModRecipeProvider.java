@@ -75,7 +75,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("find_in_the_world_not_crafting_table", conditionsFromItem(Blocks.BARRIER))
                 .offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.AM_COPPER_INGOT)
-                .input(Items.AMETHYST_SHARD)
+                .input(ModItems.AM_DUST)
                 .input(Items.COPPER_INGOT)
                 .criterion("find_in_the_world_not_crafting_table", conditionsFromItem(Blocks.BARRIER))
                 .offerTo(exporter);

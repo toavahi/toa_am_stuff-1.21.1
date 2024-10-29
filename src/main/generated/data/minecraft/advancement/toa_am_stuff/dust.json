@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:toa_am_stuff/root",
+  "criteria": {
+    "dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "toa_am_stuff:am_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.toa_am_stuff.dust.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_dust"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.dust.title"
+    }
+  },
+  "requirements": [
+    [
+      "dust"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

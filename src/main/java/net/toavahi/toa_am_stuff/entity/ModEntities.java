@@ -13,7 +13,7 @@ import net.toavahi.toa_am_stuff.ToaAmethystStuff;
 public class ModEntities {
     public static final EntityType<AmGolemEntity> AM_GOLEM_ENTITY = register("am_golem_entity",
         EntityType.Builder.<AmGolemEntity>create(AmGolemEntity::new, SpawnGroup.MISC)
-                .dimensions(1F, 1F));
+                .dimensions(0.8F, 0.8F));
     public static final EntityType<AmGrenadeEntity> AM_GRENADE_ENTITY = register("am_grenade",
             EntityType.Builder.<AmGrenadeEntity>create(AmGrenadeEntity::new, SpawnGroup.MISC)
                     .dimensions(0.25F, 0.25F));

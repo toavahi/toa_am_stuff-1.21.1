@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:toa_am_stuff/dust",
+  "criteria": {
+    "ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "toa_am_stuff:am_copper_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.toa_am_stuff.ingot.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "toa_am_stuff:am_copper_ingot"
+    },
+    "title": {
+      "translate": "advancement.toa_am_stuff.ingot.title"
+    }
+  },
+  "requirements": [
+    [
+      "ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
