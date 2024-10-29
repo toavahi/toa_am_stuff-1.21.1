@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.toavahi.toa_am_stuff.block.ModBlocks;
@@ -105,5 +104,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AM_COPPER_STAIRS, ModBlocks.AM_COPPER_BLOCK);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AM_COPPER_SLAB, ModBlocks.AM_COPPER_BLOCK, 2);
         offerStonecuttingRecipe(exporter, RecipeCategory.DECORATIONS, ModBlocks.AM_COPPER_WALL, ModBlocks.AM_COPPER_BLOCK);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, Blocks.BUDDING_AMETHYST, 2)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .input('B', Blocks.BUDDING_AMETHYST)
+                .input('A', Blocks.LARGE_AMETHYST_BUD)
+                .criterion("has_budding_am", conditionsFromItem(Blocks.BUDDING_AMETHYST))
+                .offerTo(exporter);
     }
 }

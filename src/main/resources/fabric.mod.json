@@ -3,12 +3,12 @@
 	"id": "toa_am_stuff",
 	"version": "${version}",
 	"name": "Toa Amethyst Stuff",
-	"description": "This mod adds a little bit of random stuff related to amethyst",
+	"description": "This mod adds a little bit of useful stuff related to amethyst",
 	"authors": [
 		"toavahi"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/toavahi/toa_am_stuff-1.21.1"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/toa_am_stuff/icon.png",
